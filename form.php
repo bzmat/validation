@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>formularz</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -26,27 +26,35 @@
         <form action="" method="POST">
 
         <div class="form-group">
-          <label for="name">Imię</label>
-          <input type="text" placeholder="Imię" class="form-control">
+          <label for="name">Imię: <i>*</i></label>
+          <input type="text" name="name" id="name" placeholder="imię" class="form-control" value="<?php echo $form['name']; ?>">
         </div>
 
-        <div class="form-group">
-          <label for="phone">Telefon</label>
-          <input type="text" placeholder="telefon" class="form-control">
-        </div>
+        <?php echo $error['name']; ?>
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" placeholder="email" class="form-control">
+          <label for="phone">Telefon: <i>*</i></label>
+          <input type="text" name="phone" id="phone" placeholder="telefon" class="form-control" value="<?php echo $form['phone']; ?>">
         </div>
+
+        <?php echo $error['phone']; ?>
+
+        <div class="form-group">
+          <label for="email">Email: <i>*</i></label>
+          <input type="text" name="email" id="email" placeholder="email" class="form-control" value="<?php echo $form['email']; ?>">
+        </div>
+
+        <?php echo $error['email']; ?>
 
         <div class="form-group">
           <label for="message">Wiadomość</label>
-          <textarea name="wiadomosc" class="form-control"></textarea>
+          <textarea name="message" id="message" class="form-control"><?php echo $form['message']; ?></textarea>
         </div>
 
+        <p class="form-group">* - pola wymagane</p>
+
         <div class="form-group">
-          <input type="submit" class="btn btn-success" value="Wyślij">
+          <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Wyślij">
         </div>
         
 
